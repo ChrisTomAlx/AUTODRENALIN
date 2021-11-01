@@ -17,7 +17,6 @@ COMPANY = os.getenv('MY_COMPANY') or os.getenv('COMPANY')
 print("USER", USER)
 print("PWD", PWD)
 print("COMPANY", COMPANY)
-# driver = webdriver.Chrome(executable_path="C:\Users\usr\Downloads\chromedriver_win32\chromedriver.exe")
 driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.maximize_window() # For maximizing window
 driver.implicitly_wait(15) # gives an implicit wait for 20 seconds
