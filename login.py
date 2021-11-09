@@ -6,6 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By       
 from selenium.webdriver.support import expected_conditions as EC
 from dotenv import load_dotenv
+from webdriver_manager.chrome import ChromeDriverManager
 
 load_dotenv("sample.env") 
 load_dotenv("personal.env")
@@ -16,6 +17,7 @@ COMPANY = os.getenv('MY_COMPANY') or os.getenv('COMPANY')
 print("USER", USER)
 print("PWD", PWD)
 print("COMPANY", COMPANY)
+driver = webdriver.Chrome(ChromeDriverManager().install())
 
 driver = webdriver.Chrome()
 driver.maximize_window() # For maximizing window
@@ -44,8 +46,8 @@ except Exception as e:
     print ('Oh no an exceptional exception materializes. What do we do now?')
     print ('If you are already signed in, sign out first.')
     print (e)
-    driver.close()
+    # driver.close()
 else:
     print ('No exception occurred')
     time.sleep(5) # Let the user actually see something!
-    driver.close()
+    # driver.close()
