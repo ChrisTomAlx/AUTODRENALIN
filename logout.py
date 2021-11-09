@@ -56,8 +56,8 @@ except Exception as e:
     print ('Oh no an exceptional exception materializes. What do we do now?')
     print ('If you are already signed in, sign out first.')
     print (e)
-    # driver.close()
+    driver.close()
 else:
     print ('No exception occurred')
     time.sleep(5) # Let the user actually see something!
-    # driver.close()
+    driver.close()
