@@ -7,6 +7,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from dotenv import load_dotenv
 from webdriver_manager.chrome import ChromeDriverManager
+from termcolor import cprint
 
 load_dotenv("sample.env") 
 load_dotenv("personal.env")
@@ -53,11 +54,11 @@ try:
 
     print(driver.current_url)
 except Exception as e:
-    print ('Oh no an exceptional exception materializes. What do we do now?')
+    cprint('Oh no an exceptional exception materializes. What do we do now?', 'red')
     print ('If you are already signed in, sign out first.')
     print (e)
     driver.close()
 else:
-    print ('No exception occurred')
+    cprint('No exception occurred', 'green')
     time.sleep(5) # Let the user actually see something!
     driver.close()
