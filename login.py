@@ -8,6 +8,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from dotenv import load_dotenv
 from webdriver_manager.chrome import ChromeDriverManager
 from termcolor import cprint
+import colorama
+colorama.init()
 
 load_dotenv("sample.env") 
 load_dotenv("personal.env")
@@ -45,8 +47,8 @@ except Exception as e:
     cprint('Oh no an exceptional exception materializes. What do we do now?', 'red')
     print ('If you are already signed in, sign out first.')
     print (e)
-    driver.close()
+    # driver.close()
 else:
-    cprint('No exception occurred', 'green')
+    cprint('Logged In - No exception occurred', 'green')
     time.sleep(5) # Let the user actually see something!
-    driver.close()
+    # driver.close()
