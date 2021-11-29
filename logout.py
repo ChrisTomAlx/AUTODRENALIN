@@ -41,7 +41,8 @@ try:
 
     time.sleep(5) # Let the user actually see something!
 
-    attendanceBtn = driver.find_element_by_class_name('down_sign_popup')
+    # attendanceBtn = driver.find_element_by_class_name('down_sign_popup')
+    attendanceBtn = driver.find_element(By.XPATH, "//a[@class='dropdown-toggle down_sign_popup']")
     attendanceBtn.click()
 
     time.sleep(3) # Let the user actually see something!
@@ -59,8 +60,8 @@ except Exception as e:
     cprint('Oh no an exceptional exception materializes. What do we do now?', 'red')
     print ('If you are already signed in, sign out first.')
     print (e)
-    # driver.close()
+    driver.close()
 else:
     cprint('Logged Out - No exception occurred', 'green')
     time.sleep(5) # Let the user actually see something!
-    # driver.close()
+    driver.close()
