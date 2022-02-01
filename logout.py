@@ -21,8 +21,6 @@ print("USER", USER)
 print("PWD", PWD)
 print("COMPANY", COMPANY)
 driver = webdriver.Chrome(ChromeDriverManager().install())
-
-driver = webdriver.Chrome()
 driver.maximize_window() # For maximizing window
 driver.implicitly_wait(15) # gives an implicit wait for 20 seconds
 driver.get("https://maxhr.myadrenalin.com/AdrenalinMax/#/")
@@ -45,12 +43,12 @@ try:
     attendanceBtn = driver.find_element(By.XPATH, "//a[@class='dropdown-toggle down_sign_popup']")
     attendanceBtn.click()
 
-    time.sleep(3) # Let the user actually see something!
+    time.sleep(5) # Let the user actually see something!
 
     attendanceBtn = driver.find_element(By.XPATH, "//button[@class='btn primary_cstm_btn btn-primary btn-sm green_color mr-2 ng-star-inserted']")
     attendanceBtn.click()
 
-    time.sleep(3) # Let the user actually see something!
+    time.sleep(5) # Let the user actually see something!
 
     attendanceBtn = driver.find_element_by_class_name('swal2-confirm')
     attendanceBtn.click()
